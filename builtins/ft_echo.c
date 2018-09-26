@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_loop.c                                        :+:      :+:    :+:   */
+/*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 15:19:47 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/25 15:01:08 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/25 15:08:10 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
-void	mini_loop(void)
+int		ft_echo(char **args)
 {
-	char	**args;
+	int		i;
 
-	while (1)
+
+	i = 0;
+	while (args[i])
 	{
-		put_prompt();
-		args = get_args();
-		execute(args);
+		ft_printf("%s", args[i]);
+		i++;
+		if (args[i])
+			ft_printf(" ");
 	}
+	ft_printf("\n");
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/25 10:01:06 by pdeguing          #+#    #+#              #
-#    Updated: 2018/09/25 11:52:57 by pdeguing         ###   ########.fr        #
+#    Updated: 2018/09/25 16:41:06 by pdeguing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ CFLAGS	= -Wall -Wextra -Werror
 
 NAME	= minishell
 
-SRCS	= *.c
+SRCS	= *.c \
+		  builtins/ft_echo.c \
+		  builtins/ft_cd.c \
+		  builtins/ft_env.c
 
 LIB		= -lft -L./libft/
 LIBFT	= libft/libft.a

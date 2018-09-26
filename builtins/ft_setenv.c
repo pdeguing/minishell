@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_loop.c                                        :+:      :+:    :+:   */
+/*   ft_setenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 15:19:47 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/25 15:02:27 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/25 15:02:51 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.c"
 
-void	mini_loop(void)
+int		ft_setenv(char **args)
 {
-	char	**args;
-
-	while (1)
-	{
-		put_prompt();
-		args = get_args();
-		execute(args);
-	}
+	return (0);
 }

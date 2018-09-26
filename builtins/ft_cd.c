@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_loop.c                                        :+:      :+:    :+:   */
+/*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 15:19:47 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/25 15:01:55 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/25 16:32:36 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
-void	mini_loop(void)
+int		ft_cd(char **args)
 {
-	char	**args;
-
-	while (1)
-	{
-		put_prompt();
-		args = get_args();
-		execute(args);
-	}
+	ft_printf("cd\n");
+	if (args[0] == NULL)
+		return (0); // TO REPLACE WITH HOME
+	chdir(args[0]);
+	return (0);
 }

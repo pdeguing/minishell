@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:55:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 13:56:08 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/25 17:32:26 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char	*builtin_name[] =
 {
 	"echo",
 	"cd",
+	"env",
 	"setenv",
 	"unsetenv",
-	"env",
 	"exit"
 };
 
@@ -26,21 +26,29 @@ int		(*builtin_func[])(char **) =
 {
 	&ft_echo,
 	&ft_cd,
+	&ft_env,
+	/*
 	&ft_setenv,
 	&ft_unsetenv,
-	&ft_env,
 	&ft_exit
+	*/
 };
+
+int		builtin_nbr(void)
+{
+	return (sizeof(builtin_name) / sizeof(char *));
+}
 
 int		execute(char **args)
 {
 	int		i;
 
 	i = 0;
-	while (i < builtin_nbr)
+	while (i < builtin_nbr())
 	{
-		if (ft_strcmp(args[0], builtin_name[i] == 0)
-				return (builtin_func[i](args + 1));
+		if (ft_strcmp(args[0], builtin_name[i]) == 0)
+			return (builtin_func[i](args + 1));
+		i++;
 	}
 	return (launch_program(args));
 }
