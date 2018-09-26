@@ -6,7 +6,7 @@
 #    By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/25 10:01:06 by pdeguing          #+#    #+#              #
-#    Updated: 2018/09/26 11:13:50 by pdeguing         ###   ########.fr        #
+#    Updated: 2018/09/26 14:33:41 by pdeguing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS	= *.c \
 		  builtins/ft_echo.c \
 		  builtins/ft_cd.c \
 		  builtins/ft_env.c \
-		  builtins/ft_setenv.c
+		  builtins/ft_setenv.c \
+		  builtins/ft_unsetenv.c
 
 LIB		= -lft -L./libft/
 LIBFT	= libft/libft.a

@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 11:15:38 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 14:33:23 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int		ft_echo(char **args);
 int		ft_cd(char **args);
 int		ft_env(char **args);
 int		ft_setenv(char **args);
-/*
 int		ft_unsetenv(char **args);
+/*
 int		ft_exit(char **args);
 */
 

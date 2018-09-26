@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:03:33 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 10:55:41 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:04:52 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 int		ft_env(char **args)
 {
 	int		i;
-	char	**env;
 
 	if (args[0])
 		ft_printf("");
-	env = g_env;
 	i = 0;
-	while (env[i])
+	while (g_env[i])
 	{
-		ft_printf("%s\n", env[i]);
+		ft_printf("%s\n", g_env[i]);
 		i++;
 	}
 	return (0);
