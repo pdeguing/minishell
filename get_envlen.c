@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env.c                                           :+:      :+:    :+:   */
+/*   get_envlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:03:33 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 10:55:41 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/26 11:14:34 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/26 11:15:58 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-int		ft_env(char **args)
+int		get_envlen(char **env)
 {
 	int		i;
-	char	**env;
 
-	if (args[0])
-		ft_printf("");
-	env = g_env;
 	i = 0;
-	while (env[i])
-	{
-		ft_printf("%s\n", env[i]);
+	while (env[i] != NULL)
 		i++;
-	}
-	return (0);
+	return (i);
 }

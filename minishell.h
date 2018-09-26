@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 17:32:27 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 11:15:38 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 # define BLUE "\x1b[1;34m"
 # define RESET "\x1b[0m"
 
-extern char		**environ;
+char	**g_env;
+
+int		get_envlen(char **env);
 
 int		ft_echo(char **args);
 int		ft_cd(char **args);
 int		ft_env(char **args);
-/*
 int		ft_setenv(char **args);
+/*
 int		ft_unsetenv(char **args);
 int		ft_exit(char **args);
 */
@@ -35,5 +37,7 @@ char	**get_args(void);
 int		execute(char **args);
 
 void	mini_loop(void);
+
+void	init_env(char **environ);
 
 #endif

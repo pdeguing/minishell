@@ -6,7 +6,7 @@
 #    By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/25 10:01:06 by pdeguing          #+#    #+#              #
-#    Updated: 2018/09/25 16:41:06 by pdeguing         ###   ########.fr        #
+#    Updated: 2018/09/26 11:13:50 by pdeguing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ NAME	= minishell
 SRCS	= *.c \
 		  builtins/ft_echo.c \
 		  builtins/ft_cd.c \
-		  builtins/ft_env.c
+		  builtins/ft_env.c \
+		  builtins/ft_setenv.c
 
 LIB		= -lft -L./libft/
 LIBFT	= libft/libft.a
