@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:55:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 15:04:51 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:52:31 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ int		(*builtin_func[])(char **) =
 	&ft_env,
 	&ft_setenv,
 	&ft_unsetenv,
-	/*
 	&ft_exit
-	*/
 };
 
 int		builtin_nbr(void)

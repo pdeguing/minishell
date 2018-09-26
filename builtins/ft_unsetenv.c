@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:03:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 15:04:48 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:45:16 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	remove_env(char *arg)
 	int		len;
 	char	**tmp;
 
-	ft_printf("fsociety\n");
 	len = get_envlen(g_env) - 1;
 	tmp = g_env;
 	g_env = (char **)malloc(sizeof(char *) * (len + 1));

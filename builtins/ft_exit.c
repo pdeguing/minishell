@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:04:08 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 15:04:35 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:51:49 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int		ft_exit(char **args)
 {
-	return (0);
+	(void)args;
+	exit(EXIT_SUCCESS);
 }
