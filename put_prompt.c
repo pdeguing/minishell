@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 11:53:10 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/25 12:04:37 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:57:05 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	put_prompt(void)
 {
-	ft_printf(BLUE "$>" RESET);
+	ft_printf(BLUE "$> " RESET);
 }
