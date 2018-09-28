@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 14:52:23 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 14:02:03 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 15:45:57 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	**get_path(void)
 {
-	char	**path;
+	char	*path;
 
-	path = ft_pstrcchr(g_env, "PATH", '=');
+	path = get_varenv("PATH");
 	if (path == NULL)
 		return (NULL);
-	return (ft_strsplit(*path + 5, ':'));
+	return (ft_strsplit(path, ':'));
 }
 
 int		try_path(char *path, char **args)

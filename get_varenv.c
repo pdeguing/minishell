@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cd.c                                            :+:      :+:    :+:   */
+/*   get_varenv.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:01:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 15:48:24 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/28 15:35:30 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/28 15:46:00 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-char	*get_home(void)
+char	*get_varenv(char *name)
 {
 	char	**var;
 
-	var = ft_pstrcchr(g_env, "HOME", '=');
+	var = ft_pstrcchr(g_env, name, '=');
 	if (var == NULL)
 		return (NULL);
-	return (*var + 5);
-}
-
-int		ft_cd(char **args)
-{
-	if (args[0] == NULL)
-	{
-		if (chdir(get_varenv("HOME")) == -1)
-		{
-			ft_putendl_fd("cd: HOME not set", 2);
-			return (-1);
-		}
-		return (0);
-	}
-	if (chdir(args[0]) == -1)
-	{
-		ft_putendl_fd("cd: could not change directory", 2);
-		return (-1);
-	}
-	return (0);
+	return (*var + ft_strlen(name) + 1);
 }
