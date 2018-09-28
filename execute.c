@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:55:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 15:52:31 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 11:55:10 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int		execute(char **args)
 {
 	int		i;
 
+	if (args == NULL || args[0] == NULL)
+		return (0);
 	i = 0;
 	while (i < builtin_nbr())
 	{

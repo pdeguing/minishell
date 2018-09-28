@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 14:52:23 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 17:41:06 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 11:55:09 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	**get_path(void)
 	char	**path;
 
 	path = ft_pstrcchr(g_env, "PATH", '=');
+	if (path == NULL)
+		return (NULL);
 	return (ft_strsplit(*path, ':'));
 }
 
@@ -67,8 +69,10 @@ int		launch_program(char **args)
 	{
 		wait(&pid);
 	}
-	if (pid < 0)
+	if (pid == -1)
 	{
+		ft_putendl_fd("error forking", 2);
+		exit(EXIT_FAILURE);
 	}
 	return (0);
 }

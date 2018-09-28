@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 15:41:18 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 11:38:21 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int		ft_exit(char **args);
 int		launch_program(char **args);
 
 void	put_prompt(void);
-char	**get_args(void);
+char	*read_line(void);
+char	**get_args(char *line);
 int		execute(char **args);
 
 void	mini_loop(void);

@@ -1,2 +1,14 @@
 # minishell
-"﻿he objective of this project is for you to create the simplest start of a shell script. Shell is beautiful! Isn’t there a famous saying? “As beautiful as Shell?” Thanks to all the shell projects, you will connect with the infinite power of Mankind Intelligence (Not even sure that you deserve it, but I have been forced to do so, so here we are. . . )."
+"﻿The objective of this project is for you to create the simplest start of a shell script. Shell is beautiful! Isn’t there a famous saying? “As beautiful as Shell?” Thanks to all the shell projects, you will connect with the infinite power of Mankind Intelligence (Not even sure that you deserve it, but I have been forced to do so, so here we are. . . )."
+
+
+### BUGS TO FIX
+
+* PATH not working if set to /bin, try other similar, it works only when we use the full original PATH
+* setenv PATH will add a new PATH instead of replacing the existing one
+
+### TO DO
+
+* create strtok
+* manage extensions
+* bonuses

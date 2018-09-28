@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_loop.c                                        :+:      :+:    :+:   */
+/*   read_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 11:41:47 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/28 11:35:03 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/28 11:37:29 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	mini_loop(void)
+char	*read_line(void)
 {
 	char	*line;
-	char	**args;
-	int		status;
 
-	while (1)
+	line = NULL;
+	if (get_next_line(0, &line) == -1)
 	{
-		put_prompt();
-		line = read_line();
-		args = get_args(line);
-		status = execute(args);
-		free(line);
-		free(args);
-	}
+		ft_putendl_fd("could not read arguments", 2);
+		exit(EXIT_FAILURE);
+	}	
+	return (line);
 }
