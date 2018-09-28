@@ -4,11 +4,12 @@
 
 ### BUGS TO FIX
 
-* PATH not working if set to /bin, try other similar, it works only when we use the full original PATH
-* setenv PATH will add a new PATH instead of replacing the existing one
+* Fixed: by removing the prefix PATH= on the first string to try... PATH not working if set to /bin, try other similar, it works only when we use the full original PATH
+* Fixed: ft_strccmp was not implemented correctly... setenv PATH will add a new PATH instead of replacing the existing one
 
 ### TO DO
 
 * create strtok
+* check builtins
 * manage extensions
 * bonuses

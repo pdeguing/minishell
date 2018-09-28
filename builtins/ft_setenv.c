@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:02:27 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 15:04:50 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 14:19:45 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ int		ft_setenv(char **args)
 	while (args[++i] != NULL)
 	{
 		if (!ft_strchr(args[i], '='))
+		{
+			ft_printf("usage: setenv NAME=value\n");
 			continue ;
+		}
 		else if (!replace_env(args[i]))
 			add_env(args[i]);
 	}
