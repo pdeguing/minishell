@@ -9,8 +9,11 @@
 
 ### TO DO
 
-- [ ] create strtok
+- [ ] create strsep
+- [ ] build a lexer
+- [ ] build a parser
 - [x] check builtins
 - [x] create a function get_value to get value of env var
 - [ ] manage extensions
+- [ ] be sure not to allocate memory in child process so we don't have to rely on the os
 - [ ] bonuses
