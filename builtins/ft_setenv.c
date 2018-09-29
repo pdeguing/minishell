@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:02:27 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 14:19:45 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 16:11:27 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,6 @@ void	add_env(char *arg)
 	}
 	g_env[i] = ft_strdup(arg);
 	free(tmp);
-}
-
-int		replace_env(char *arg)
-{
-	char	*tmp;
-	char	**env;
-
-	env = ft_pstrcchr(g_env, arg, '=');
-	if (env == NULL)
-		return (0);
-	tmp = *env;
-	*env = arg;
-	free(tmp);
-	return (1);
 }
 
 int		ft_setenv(char **args)

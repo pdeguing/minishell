@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   replace_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:04:08 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 16:30:35 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/28 16:10:43 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/09/28 16:11:18 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../../minishell.h"
 
-int		ft_exit(char **args)
+int		replace_env(char *arg)
 {
-	(void)args;
-	exit(EXIT_SUCCESS);
+	char	*tmp;
+	char	**env;
+
+	env = ft_pstrcchr(g_env, arg, '=');
+	if (env == NULL)
+		return (0);
+	tmp = *env;
+	*env = arg;
+	free(tmp);
+	return (1);
 }

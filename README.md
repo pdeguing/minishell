@@ -10,7 +10,7 @@
 ### TO DO
 
 - [ ] create strtok
-- [ ] check builtins
+- [x] check builtins
 - [x] create a function get_value to get value of env var
 - [ ] manage extensions
 - [ ] bonuses

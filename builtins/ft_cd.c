@@ -6,24 +6,15 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:01:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 15:48:24 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 16:15:34 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-char	*get_home(void)
-{
-	char	**var;
-
-	var = ft_pstrcchr(g_env, "HOME", '=');
-	if (var == NULL)
-		return (NULL);
-	return (*var + 5);
-}
-
 int		ft_cd(char **args)
 {
+	replace_env(ft_strjoin("OLDPWD=", getcwd(NULL, 0)));
 	if (args[0] == NULL)
 	{
 		if (chdir(get_varenv("HOME")) == -1)
@@ -31,12 +22,12 @@ int		ft_cd(char **args)
 			ft_putendl_fd("cd: HOME not set", 2);
 			return (-1);
 		}
-		return (0);
 	}
-	if (chdir(args[0]) == -1)
+	else if (chdir(args[0]) == -1)
 	{
 		ft_putendl_fd("cd: could not change directory", 2);
 		return (-1);
 	}
+	replace_env(ft_strfljoin("PWD=", getcwd(NULL, 0)));
 	return (0);
 }

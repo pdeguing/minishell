@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 14:52:23 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 15:45:57 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 17:09:37 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int		exec_allpath(char **args)
 	int		i;
 	char	**allpath;
 
-	if (ft_strchr(args[0], '/'))
-		return (execve(args[0], args, g_env));
 	allpath = get_path();
 	if (allpath == NULL)
 		return (-1);

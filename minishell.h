@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 15:38:23 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/09/28 16:15:15 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 char	**g_env;
 
 int		get_envlen(char **env);
+
+int		replace_env(char *arg);
 char	*get_varenv(char *name);
 
 int		ft_echo(char **args);
