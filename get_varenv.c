@@ -18,6 +18,6 @@ char	*get_varenv(char *name)
 
 	var = ft_pstrcchr(g_env, name, '=');
 	if (var == NULL)
-		return (NULL);
+		return (ft_strnew(1));
 	return (*var + ft_strlen(name) + 1);
 }

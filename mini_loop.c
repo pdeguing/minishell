@@ -15,14 +15,13 @@
 void	commands_loop(char **commands)
 {
 	char	**args;
-	int		status;
 	int		i;
 
 	i = 0;
 	while (commands[i] != NULL)
 	{
 		args = get_args(commands[i]);
-		status = execute(args);
+		execute(args);
 		free(args);
 		i++;
 	}

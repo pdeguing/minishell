@@ -48,9 +48,7 @@ char	*extend_dollar(char *arg)
 	var_name = ft_strsub(arg, dstart, dend + 1);
 	suffix = ft_strsub(arg, dend + 1, ft_strlen(arg + dend + 1));
 	ft_strdel(&arg);
-	ft_printf("var_name = %s\n", var_name);
 	new = ft_strffjoin(new, get_varenv(var_name)); // VARENV CAN RETURN NULL BUT STRJOIN BREAK IF YOU SEND NULL
-	ft_printf("fsociety\n");
 	new = ft_strfjoin(new, suffix);
 	return (new);
 }
