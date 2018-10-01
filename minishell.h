@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 16:15:15 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/01 12:31:33 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ int		ft_exit(char **args);
 
 int		launch_program(char **args);
 
+char	*extend_dollar(char *arg);
+
 void	put_prompt(void);
 char	*read_line(void);
-char	**get_args(char *line);
+char	**get_args(char *command);
+char	**get_commands(char *line);
 int		execute(char **args);
 
 void	mini_loop(void);

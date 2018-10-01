@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:56:04 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/29 13:31:51 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/01 12:27:46 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,20 @@
 ** complicated input anyway.
 */
 
-char	**get_args(char *line)
+char	**get_args(char *command)
 {
 	char	**args;
+	int		i;
 
-	if (line == NULL)
+	if (command == NULL)
 		return (NULL);
-	args = ft_strsplit(line, ' ');
+	args = ft_strsplit(command, ' '); // SPLIT TABS TOO
+	i = 0;
+	while (args[i] != NULL)
+	{
+		while (ft_strchr(args[i], '$'))
+			args[i] = extend_dollar(args[i]);
+		i++;
+	}
 	return (args);
 }

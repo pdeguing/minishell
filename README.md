@@ -9,9 +9,6 @@
 
 ### TO DO
 
-- [ ] create strsep
-- [ ] build a lexer
-- [ ] build a parser
 - [x] check builtins
 - [x] create a function get_value to get value of env var
 - [ ] manage extensions
