@@ -15,3 +15,4 @@
 - [x] create a function get_value to get value of env var
 - [x] manage extensions
 - [x] bonuses
+- [ ] strsplit multiple characters (add TAB)
