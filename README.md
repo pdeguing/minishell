@@ -6,11 +6,12 @@
 
 * Fixed: by removing the prefix PATH= on the first string to try... PATH not working if set to /bin, try other similar, it works only when we use the full original PATH
 * Fixed: ft_strccmp was not implemented correctly... setenv PATH will add a new PATH instead of replacing the existing one
+* SEGFAULT WHEN CTRL+D 
+* Fixed: resetting signal after child process terminate... CTRL+C DOES NOT PUT PROMPT BACK IF DONE AFTER PROGRAM EXE
 
 ### TO DO
 
 - [x] check builtins
 - [x] create a function get_value to get value of env var
-- [ ] manage extensions
-- [ ] be sure not to allocate memory in child process so we don't have to rely on the os
-- [ ] bonuses
+- [x] manage extensions
+- [x] bonuses

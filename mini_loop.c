@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/02 18:42:01 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/03 12:45:39 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,36 @@ void	commands_loop(char **commands)
 	free(commands);
 }
 
-void	handle_sigint(int sig)
+void	handle_sig(int sig)
 {
-	(void)sig;
-	ft_printf("\n");
-	put_prompt();
+	if (sig == SIGINT)
+	{
+		ft_printf("\n");
+		put_prompt();
+		signal(SIGINT, handle_sig);
+	}
 }
 
-void	handle_child(int sig)
+void	handle_childsig(int sig)
 {
-	exit(sig);
+	if (sig == SIGINT)
+	{
+		ft_printf("\n");
+		signal(SIGINT, handle_childsig);
+	}
 }
 
 void	mini_loop(void)
 {
 	char	*line;
 
-	signal(SIGINT, handle_sigint);
+	signal(SIGINT, handle_sig);
 	while (1)
 	{
 		put_prompt();
 		line = read_line();
-		commands_loop(get_commands(line));
+		if (line != NULL)
+			commands_loop(get_commands(line));
 		free(line);
 	}
 }

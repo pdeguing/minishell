@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/02 18:41:07 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/03 12:46:25 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int		ft_setenv(char **args);
 int		ft_unsetenv(char **args);
 int		ft_exit(char **args);
 
-void	handle_sigint(int sig);
-void	handle_child(int sig);
+void	handle_sig(int sig);
+void	handle_childsig(int sig);
 
 int		launch_program(char **args);
 
