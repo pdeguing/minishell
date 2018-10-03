@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 14:52:23 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 17:09:37 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/02 18:42:00 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int		exec_allpath(char **args)
 	int		i;
 	char	**allpath;
 
+	if (ft_strchr(args[0], '/'))
+		return (execve(args[0], args, g_env));
 	allpath = get_path();
 	if (allpath == NULL)
 		return (-1);
@@ -59,6 +61,7 @@ int		launch_program(char **args)
 	{
 		if (exec_allpath(args) == -1)
 		{
+			signal(SIGINT, handle_child);
 			ft_printf("%s: command not found\n", args[0]);
 			exit(EXIT_FAILURE);
 		}

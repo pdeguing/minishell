@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:55:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 18:16:15 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/02 14:48:39 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int		execute(char **args)
 
 	if (args == NULL || args[0] == NULL)
 		return (0);
-	if (ft_strchr(args[0], '/'))
-		return (execve(args[0], args, g_env));
 	i = 0;
+	if (ft_strchr(args[0], '/'))
+		return (launch_program(args));
 	while (i < builtin_nbr())
 	{
 		if (ft_strcmp(args[0], builtin_name[i]) == 0)

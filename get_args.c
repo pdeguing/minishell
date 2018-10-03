@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:56:04 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/01 12:27:46 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/02 16:06:55 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	**get_args(char *command)
 {
 	char	**args;
 	int		i;
+	int		j;
 
 	if (command == NULL)
 		return (NULL);
@@ -38,8 +39,19 @@ char	**get_args(char *command)
 	i = 0;
 	while (args[i] != NULL)
 	{
+		if (args[i][0] == '~' && (args[i][1] == '/' || args[i][1] == '\0'))
+			args[i] = extension(args[i], '~');
 		while (ft_strchr(args[i], '$'))
-			args[i] = extend_dollar(args[i]);
+			args[i] = extension(args[i], '$');
+		if (!ft_strlen(args[i]))
+		{
+			j = i;
+			while (args[j] != NULL)
+			{
+				args[j] = args[j + 1];
+				j++;
+			}
+		}
 		i++;
 	}
 	return (args);

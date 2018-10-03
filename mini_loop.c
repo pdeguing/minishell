@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/01 12:27:47 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/02 18:42:01 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,23 @@ void	commands_loop(char **commands)
 	free(commands);
 }
 
+void	handle_sigint(int sig)
+{
+	(void)sig;
+	ft_printf("\n");
+	put_prompt();
+}
+
+void	handle_child(int sig)
+{
+	exit(sig);
+}
+
 void	mini_loop(void)
 {
 	char	*line;
 
+	signal(SIGINT, handle_sigint);
 	while (1)
 	{
 		put_prompt();

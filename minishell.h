@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/01 12:31:33 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/02 18:41:07 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MINISHELL_H
 # include "libft/includes/libft.h"
 # include <sys/wait.h>
+# include <signal.h>
 # define BLUE "\x1b[1;34m"
 # define RESET "\x1b[0m"
 
@@ -31,9 +32,12 @@ int		ft_setenv(char **args);
 int		ft_unsetenv(char **args);
 int		ft_exit(char **args);
 
+void	handle_sigint(int sig);
+void	handle_child(int sig);
+
 int		launch_program(char **args);
 
-char	*extend_dollar(char *arg);
+char	*extension(char *arg, char c);
 
 void	put_prompt(void);
 char	*read_line(void);

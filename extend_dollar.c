@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 12:26:56 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/01 12:57:58 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/02 16:07:09 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,36 @@ int		get_dend(char *arg, int dstart)
 	int		i;
 
 	i = dstart;
-	while (arg[i] && ft_isalnum(arg[i]))
+	while (arg[i] && (ft_isalnum(arg[i]) || arg[i] == '_'))
 	{
 		i++;
 	}
 	return (i);
 }
 
-char	*extend_dollar(char *arg)
+char	*extension(char *arg, char symbol)
 {
 	char	*new;
 	char	*var_name;
 	char	*suffix;
-	int		dstart;
-	int		dend;
+	int		start;
+	int		end;
 
-	dstart = get_dstart(arg) + 1;
-	dend = get_dend(arg, dstart); // WE MUST BE SURE THE VAR NAME ENDS WHEN IT SHOULD, CHECK EXACT CONDITION
-	new = ft_strsub(arg, 0, dstart - 1);
-	var_name = ft_strsub(arg, dstart, dend + 1);
-	suffix = ft_strsub(arg, dend + 1, ft_strlen(arg + dend + 1));
-	ft_strdel(&arg);
-	new = ft_strffjoin(new, get_varenv(var_name)); // VARENV CAN RETURN NULL BUT STRJOIN BREAK IF YOU SEND NULL
+	start = 1;
+	end = 1;
+	if (symbol == '$')
+	{
+		start = get_dstart(arg) + 1;
+		end = get_dend(arg, start);
+		var_name = ft_strsub(arg, start, end + 1);
+	}
+	else
+		var_name = ft_strdup("HOME");
+	new = ft_strsub(arg, 0, start - 1);
+	suffix = ft_strsub(arg, end, ft_strlen(arg + end));
+	new = ft_strffjoin(new, get_varenv(var_name));
 	new = ft_strfjoin(new, suffix);
+	ft_strdel(&arg);
+	ft_strdel(&var_name);
 	return (new);
 }
