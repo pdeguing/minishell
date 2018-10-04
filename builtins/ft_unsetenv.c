@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:03:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 13:54:16 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 12:34:43 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	remove_env(char *arg)
 	{
 		if (ft_strccmp(tmp[i], arg, '='))
 		{
-			g_env[j] = tmp[i];
+			g_env[j] = ft_strdup(tmp[i]);
 			j++;
 		}
 		i++;
 	}
-	free(tmp);
+	ft_pstrdel(tmp);
 }
 
 int		ft_unsetenv(char **args)

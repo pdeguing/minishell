@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:01:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/02 15:41:55 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 11:56:36 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_cd(char **args)
 {
-	replace_env(ft_strjoin("OLDPWD=", getcwd(NULL, 0)));
+	replace_env(ft_strfljoin("OLDPWD=", getcwd(NULL, 0)));
 	if (args[0] == NULL)
 	{
 		if (chdir(get_varenv("HOME")) == -1)

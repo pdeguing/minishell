@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 14:52:23 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/03 11:56:28 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 09:46:25 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		launch_program(char **args)
 	signal(SIGINT, handle_childsig);
 	if (pid == 0)
 	{
-		if ((status = exec_allpath(args) != 0))
+		if ((status = exec_allpath(args)) != 0)
 		{
 			if (status == -1)
 				ft_printf("%s: command not found\n", args[0]);

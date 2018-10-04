@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 15:35:30 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 15:46:00 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 12:40:48 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ char	*get_varenv(char *name)
 
 	var = ft_pstrcchr(g_env, name, '=');
 	if (var == NULL)
-		return (ft_strnew(1));
+		return (NULL);
 	return (*var + ft_strlen(name) + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:56:04 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/02 16:06:55 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 13:08:14 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ char	**get_args(char *command)
 	{
 		if (args[i][0] == '~' && (args[i][1] == '/' || args[i][1] == '\0'))
 			args[i] = extension(args[i], '~');
-		while (ft_strchr(args[i], '$'))
+		while (ft_strchr(args[i], '$')) // CAN IMPROVE CONDITION
 			args[i] = extension(args[i], '$');
 		if (!ft_strlen(args[i]))
 		{
+			ft_strdel(&args[i]);
 			j = i;
 			while (args[j] != NULL)
 			{

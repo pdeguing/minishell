@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 12:26:56 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/02 16:07:09 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 13:08:15 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ int		get_dend(char *arg, int dstart)
 	return (i);
 }
 
+char	*append_varenv(char *old, char *varenv)
+{
+
+	if (varenv == NULL)
+		return (old);
+	return (ft_strffjoin(old, varenv));
+}
+
 char	*extension(char *arg, char symbol)
 {
 	char	*new;
@@ -54,7 +62,7 @@ char	*extension(char *arg, char symbol)
 		var_name = ft_strdup("HOME");
 	new = ft_strsub(arg, 0, start - 1);
 	suffix = ft_strsub(arg, end, ft_strlen(arg + end));
-	new = ft_strffjoin(new, get_varenv(var_name));
+	new = append_varenv(new, get_varenv(var_name));
 	new = ft_strfjoin(new, suffix);
 	ft_strdel(&arg);
 	ft_strdel(&var_name);

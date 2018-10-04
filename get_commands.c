@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:12:58 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/01 11:15:15 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 11:02:04 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	**get_commands(char *line)
 {
-	if (line == NULL)
+	if (line == NULL || ft_strlen(line) == 0)
 		return (NULL);
-	else
-		return (ft_strsplit(line, ';'));
+//	ft_replace_char(line, '	', ' ');
+	return (ft_strsplit(line, ';'));
 }

@@ -8,6 +8,12 @@
 * Fixed: ft_strccmp was not implemented correctly... setenv PATH will add a new PATH instead of replacing the existing one
 * SEGFAULT WHEN CTRL+D 
 * Fixed: resetting signal after child process terminate... CTRL+C DOES NOT PUT PROMPT BACK IF DONE AFTER PROGRAM EXE
+* Fixed: Leaks: cd / unsetenv
+* Fixed: usage displays twice if 2 args in setenv
+* Fixed: Segfault if echo non-existent var 
+* Fixed: Leaks if echo non-existent var
+* Should print $ if only $
+
 
 ### TO DO
 

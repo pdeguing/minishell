@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:02:27 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 16:11:27 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 12:28:37 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 ** string in the array or just assign the pointers to the new array? The first
 ** one would allow for continuous memory and the second saves a bunch of
 ** memory allocation.
+**
+** Update: an array of pointers to string is not continuous in memory anyway.
 */
 
 void	add_env(char *arg)
@@ -32,11 +34,11 @@ void	add_env(char *arg)
 	i = 0;
 	while (tmp[i] != NULL)
 	{
-		g_env[i] = tmp[i];
+		g_env[i] = ft_strdup(tmp[i]);
 		i++;
 	}
 	g_env[i] = ft_strdup(arg);
-	free(tmp);
+	ft_pstrdel(tmp);
 }
 
 int		ft_setenv(char **args)
@@ -49,9 +51,9 @@ int		ft_setenv(char **args)
 		if (!ft_strchr(args[i], '='))
 		{
 			ft_printf("usage: setenv NAME=value\n");
-			continue ;
+			return (0);
 		}
-		else if (!replace_env(args[i]))
+		else if (!replace_env(ft_strdup(args[i])))
 			add_env(args[i]);
 	}
 	return (0);
