@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:56:04 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 13:08:14 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 14:35:16 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 **
 ** Actually we will probably need to implement our own strtok to handle more
 ** complicated input anyway.
+**
+** We will need to change conditions for '$' extension for coming projects,
+** if we really want to imitate Bash behaviour.
 */
 
 char	**get_args(char *command)
@@ -32,16 +35,17 @@ char	**get_args(char *command)
 	char	**args;
 	int		i;
 	int		j;
+	char	*sym;
 
 	if (command == NULL)
 		return (NULL);
-	args = ft_strsplit(command, ' '); // SPLIT TABS TOO
+	args = ft_strsplit(command, ' ');
 	i = 0;
 	while (args[i] != NULL)
 	{
 		if (args[i][0] == '~' && (args[i][1] == '/' || args[i][1] == '\0'))
 			args[i] = extension(args[i], '~');
-		while (ft_strchr(args[i], '$')) // CAN IMPROVE CONDITION
+		while ((sym = ft_strchr(args[i], '$')) && ft_isalnum(*(sym + 1)))
 			args[i] = extension(args[i], '$');
 		if (!ft_strlen(args[i]))
 		{

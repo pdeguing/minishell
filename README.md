@@ -12,7 +12,7 @@
 * Fixed: usage displays twice if 2 args in setenv
 * Fixed: Segfault if echo non-existent var 
 * Fixed: Leaks if echo non-existent var
-* Should print $ if only $
+* Fixed: Should print $ if only $
 
 
 ### TO DO
@@ -21,4 +21,4 @@
 - [x] create a function get_value to get value of env var
 - [x] manage extensions
 - [x] bonuses
-- [ ] strsplit multiple characters (add TAB)
+- [x] strsplit multiple characters (add TAB) (we just replace tabs per spaces actually)
