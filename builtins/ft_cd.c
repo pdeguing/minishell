@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:01:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 11:56:36 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 16:06:38 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,27 @@
 
 int		ft_cd(char **args)
 {
-	replace_env(ft_strfljoin("OLDPWD=", getcwd(NULL, 0)));
-	if (args[0] == NULL)
+	char	*old;
+
+	if (args[0] != NULL && *args[0] == '-')
 	{
-		if (chdir(get_varenv("HOME")) == -1)
-		{
-			ft_putendl_fd("cd: HOME not set", 2);
-			return (-1);
-		}
+		old = get_varenv("OLDPWD");
+		if (old == NULL)
+			return (put_error("cd: OLDPWD not set", -1));
+		replace_env(ft_strfljoin("OLDPWD=", getcwd(NULL, 0)));
+		if (chdir(old) == -1)
+			return(put_error("cd: could not change directory", -1));
 	}
-	else if (chdir(args[0]) == -1)
+	else
 	{
-		ft_putendl_fd("cd: could not change directory", 2);
-		return (-1);
+		replace_env(ft_strfljoin("OLDPWD=", getcwd(NULL, 0)));
+		if (args[0] == NULL)
+		{
+			if (chdir(get_varenv("HOME")) == -1)
+				return (put_error("cd: HOME not set", -1));
+		}
+		else if (chdir(args[0]) == -1)
+			return (put_error("cd: could not change directory", -1));
 	}
 	replace_env(ft_strfljoin("PWD=", getcwd(NULL, 0)));
 	return (0);

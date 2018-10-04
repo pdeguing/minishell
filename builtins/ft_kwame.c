@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_echo.c                                          :+:      :+:    :+:   */
+/*   ft_kwame.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:01:08 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 15:06:55 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/10/04 15:05:32 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/10/04 16:43:40 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int		ft_echo(char **args)
+int		ft_kwame(char **args)
 {
-	int		i;
-
-	i = 0;
-	while (args[i])
-	{
-		ft_printf("%s", args[i]);
-		i++;
-		if (args[i])
-			ft_printf(" ");
-	}
-	ft_printf("\n");
+	(void)args;
+	ft_printf(YELLOW "TROLOLO\n" RESET);
 	return (0);
 }

@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_echo.c                                          :+:      :+:    :+:   */
+/*   put_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:01:08 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 15:06:55 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/10/04 15:54:20 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/10/04 16:01:29 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-int		ft_echo(char **args)
+int		put_error(char *err, int errn)
 {
-	int		i;
-
-	i = 0;
-	while (args[i])
-	{
-		ft_printf("%s", args[i]);
-		i++;
-		if (args[i])
-			ft_printf(" ");
-	}
-	ft_printf("\n");
-	return (0);
+	ft_putendl_fd(err, 2);
+	return (errn);
 }

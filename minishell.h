@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/03 12:46:25 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 16:42:05 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <sys/wait.h>
 # include <signal.h>
 # define BLUE "\x1b[1;34m"
+# define RED "\x1b[0;31m"
+# define YELLOW "\x1b[0;33m"
+# define WHITE "\x1b[1;37m"
 # define RESET "\x1b[0m"
 
 char	**g_env;
@@ -31,9 +34,12 @@ int		ft_env(char **args);
 int		ft_setenv(char **args);
 int		ft_unsetenv(char **args);
 int		ft_exit(char **args);
+int		ft_kwame(char **args);
 
 void	handle_sig(int sig);
 void	handle_childsig(int sig);
+
+int		put_error(char *err, int errn);
 
 int		launch_program(char **args);
 

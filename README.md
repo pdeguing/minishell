@@ -13,7 +13,7 @@
 * Fixed: Segfault if echo non-existent var 
 * Fixed: Leaks if echo non-existent var
 * Fixed: Should print $ if only $
-
+* Fixed: it was not implemented... cd - not working
 
 ### TO DO
 
@@ -22,3 +22,5 @@
 - [x] manage extensions
 - [x] bonuses
 - [x] strsplit multiple characters (add TAB) (we just replace tabs per spaces actually)
+- [x] check if all error are printed to stderr
+- [x] check for forgotten debug print
