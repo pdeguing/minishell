@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 12:26:56 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 14:35:17 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:13:08 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int		get_dend(char *arg, int dstart)
 
 char	*append_varenv(char *old, char *varenv)
 {
-
 	if (varenv == NULL)
 		return (old);
 	return (ft_strffjoin(old, varenv));

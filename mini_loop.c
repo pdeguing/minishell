@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 11:08:48 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 14:36:05 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:13:25 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	mini_loop(void)
 		free(line);
 	}
 }
-
-
 /*
 ** So we want to be able to run multiple commands separated by ';'
 ** A command is an array of pointers to strings so we want to be able to

@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 11:35:03 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 14:36:06 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:13:42 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*read_line(void)
 	{
 		ft_putendl_fd("could not read arguments", 2);
 		exit(EXIT_FAILURE);
-	}	
+	}
 	if (line == NULL)
 		ft_putchar('\n');
 	return (line);

@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:56:04 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 14:35:16 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:31:45 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,23 @@
 ** if we really want to imitate Bash behaviour.
 */
 
+void	get_extension(char **parg)
+{
+	char	*sym;
+	char	*arg;
+
+	arg = *parg;
+	if (arg[0] == '~' && (arg[1] == '/' || arg[1] == '\0'))
+		*parg = extension(arg, '~');
+	while ((sym = ft_strchr(arg, '$')) && ft_isalnum(*(sym + 1)))
+		*parg = extension(arg, '$');
+}
+
 char	**get_args(char *command)
 {
 	char	**args;
 	int		i;
 	int		j;
-	char	*sym;
 
 	if (command == NULL)
 		return (NULL);
@@ -43,10 +54,7 @@ char	**get_args(char *command)
 	i = 0;
 	while (args[i] != NULL)
 	{
-		if (args[i][0] == '~' && (args[i][1] == '/' || args[i][1] == '\0'))
-			args[i] = extension(args[i], '~');
-		while ((sym = ft_strchr(args[i], '$')) && ft_isalnum(*(sym + 1)))
-			args[i] = extension(args[i], '$');
+		get_extension(&args[i]);
 		if (!ft_strlen(args[i]))
 		{
 			ft_strdel(&args[i]);

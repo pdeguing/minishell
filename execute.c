@@ -6,13 +6,13 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 13:55:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 15:07:42 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:20:10 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-char	*builtin_name[] = 
+char	*g_builtin_name[] =
 {
 	"echo",
 	"cd",
@@ -23,7 +23,7 @@ char	*builtin_name[] =
 	"kwame"
 };
 
-int		(*builtin_func[])(char **) = 
+int		(*g_builtin_func[])(char **) =
 {
 	&ft_echo,
 	&ft_cd,
@@ -36,7 +36,7 @@ int		(*builtin_func[])(char **) =
 
 int		builtin_nbr(void)
 {
-	return (sizeof(builtin_name) / sizeof(char *));
+	return (sizeof(g_builtin_name) / sizeof(char *));
 }
 
 int		execute(char **args)
@@ -50,8 +50,8 @@ int		execute(char **args)
 		return (launch_program(args));
 	while (i < builtin_nbr())
 	{
-		if (ft_strcmp(args[0], builtin_name[i]) == 0)
-			return (builtin_func[i](args + 1));
+		if (ft_strcmp(args[0], g_builtin_name[i]) == 0)
+			return (g_builtin_func[i](args + 1));
 		i++;
 	}
 	return (launch_program(args));

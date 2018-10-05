@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:01:55 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 16:06:38 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:32:27 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_cd(char **args)
 			return (put_error("cd: OLDPWD not set", -1));
 		replace_env(ft_strfljoin("OLDPWD=", getcwd(NULL, 0)));
 		if (chdir(old) == -1)
-			return(put_error("cd: could not change directory", -1));
+			return (put_error("cd: could not change directory", -1));
 	}
 	else
 	{
