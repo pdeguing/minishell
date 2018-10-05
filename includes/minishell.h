@@ -6,13 +6,13 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 16:42:05 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:51:42 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
-# include "libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # include <sys/wait.h>
 # include <signal.h>
 # define BLUE "\x1b[1;34m"

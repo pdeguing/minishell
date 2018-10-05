@@ -6,11 +6,11 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:03:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 12:34:43 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:49:15 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
 void	remove_env(char *arg)
 {

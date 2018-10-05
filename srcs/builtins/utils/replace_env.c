@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env.c                                           :+:      :+:    :+:   */
+/*   replace_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:03:33 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/26 15:04:52 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/28 16:10:43 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/10/04 17:49:30 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-int		ft_env(char **args)
+int		replace_env(char *arg)
 {
-	int		i;
+	char	*tmp;
+	char	**env;
 
-	if (args[0])
-		ft_printf("");
-	i = 0;
-	while (g_env[i])
+	env = ft_pstrcchr(g_env, arg, '=');
+	if (env == NULL)
 	{
-		ft_printf("%s\n", g_env[i]);
-		i++;
+		ft_strdel(&arg);
+		return (0);
 	}
-	return (0);
+	tmp = *env;
+	*env = arg;
+	free(tmp);
+	return (1);
 }

@@ -6,11 +6,11 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 15:02:27 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 12:28:37 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/04 17:49:06 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
 /*
 ** Not sure what is the best practice here, should we make a copy of each

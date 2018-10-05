@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_echo.c                                          :+:      :+:    :+:   */
+/*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:01:08 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 15:06:55 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/09/25 15:03:33 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/10/04 17:48:41 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-int		ft_echo(char **args)
+int		ft_env(char **args)
 {
 	int		i;
 
+	if (args[0])
+		ft_printf("");
 	i = 0;
-	while (args[i])
+	while (g_env[i])
 	{
-		ft_printf("%s", args[i]);
+		ft_printf("%s\n", g_env[i]);
 		i++;
-		if (args[i])
-			ft_printf(" ");
 	}
-	ft_printf("\n");
 	return (0);
 }

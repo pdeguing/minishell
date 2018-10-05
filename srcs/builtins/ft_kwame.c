@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   ft_kwame.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 15:04:08 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/09/28 16:30:35 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/10/04 15:05:32 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/10/04 17:48:56 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-int		ft_exit(char **args)
+int		ft_kwame(char **args)
 {
 	(void)args;
-	exit(EXIT_SUCCESS);
+	ft_printf(YELLOW "TROLOLO\n" RESET);
+	return (0);
 }
