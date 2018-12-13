@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 17:43:13 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 17:43:20 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/11/14 15:11:10 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,16 @@ char	*extension(char *arg, char symbol)
 	ft_strdel(&arg);
 	ft_strdel(&var_name);
 	return (new);
+}
+
+void	get_extension(char **parg)
+{
+	char	*sym;
+	char	*arg;
+
+	arg = *parg;
+	if (arg[0] == '~' && (arg[1] == '/' || arg[1] == '\0'))
+		*parg = extension(arg, '~');
+	while ((sym = ft_strchr(arg, '$')) && ft_isalnum(*(sym + 1)))
+		*parg = extension(arg, '$');
 }

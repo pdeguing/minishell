@@ -6,15 +6,18 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 09:53:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/10/04 17:51:42 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/10/08 11:34:30 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
+
 # include "../libft/includes/libft.h"
 # include <sys/wait.h>
 # include <signal.h>
+
+# define BLACK "\x1b[1m"
 # define BLUE "\x1b[1;34m"
 # define RED "\x1b[0;31m"
 # define YELLOW "\x1b[0;33m"
